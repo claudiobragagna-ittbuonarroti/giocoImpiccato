@@ -3,6 +3,6 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        InterfacciaGUI i1 = new InterfacciaGUI();
     }
 }
