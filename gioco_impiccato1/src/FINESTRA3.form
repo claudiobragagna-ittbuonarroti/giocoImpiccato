@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="FINESTRA3">
+  <grid id="27dc6" binding="pnlPannello3" layout-manager="GridLayoutManager" row-count="3" column-count="11" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="923" height="400"/>
+    </constraints>
+    <properties>
+      <background color="-7971329"/>
+      <font/>
+      <foreground color="-1507344"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <hspacer id="c0d0f">
+        <constraints>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="8d09a">
+        <constraints>
+          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="59073" class="javax.swing.JLabel" binding="showParola">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-5186817"/>
+          <font name="Arial Rounded MT Bold" size="48" style="0"/>
+          <text value="_ _ _ _ _ _"/>
+        </properties>
+      </component>
+      <component id="94e7d" class="javax.swing.JButton" binding="inserisciLetteraBUTTON">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1866497"/>
+          <foreground color="-15132635"/>
+          <text value="inserisci lettera"/>
+        </properties>
+      </component>
+      <hspacer id="5ac74">
+        <constraints>
+          <grid row="0" column="10" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="e4634">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="1bfb8">
+        <constraints>
+          <grid row="0" column="9" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="ae95b" class="javax.swing.JTextField" binding="erroriTXT">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-1866497"/>
+          <foreground color="-15132635"/>
+        </properties>
+      </component>
+      <component id="33bec" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="14"/>
+          <foreground color="-1507344"/>
+          <text value="errori --&gt; "/>
+        </properties>
+      </component>
+      <component id="990f8" class="javax.swing.JTextField" binding="viteRimasteTXT">
+        <constraints>
+          <grid row="1" column="6" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-1866497"/>
+          <foreground color="-15132635"/>
+        </properties>
+      </component>
+      <component id="a5907" class="javax.swing.JButton" binding="consiglioBUTTON">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1866497"/>
+          <foreground color="-15132635"/>
+          <text value="consiglio "/>
+        </properties>
+      </component>
+      <component id="759aa" class="javax.swing.JTextField" binding="consiglioTEXT">
+        <constraints>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-7971329"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="13d79" class="javax.swing.JTextField" binding="inputTEXT">
+        <constraints>
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-7971329"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="73e3e" class="javax.swing.JButton" binding="inserisciParolaBUTTON">
+        <constraints>
+          <grid row="2" column="6" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1866497"/>
+          <foreground color="-15132635"/>
+          <text value="inserisci parola"/>
+        </properties>
+      </component>
+      <component id="24de2" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font/>
+          <foreground color="-1507344"/>
+          <text value="&lt;-- vite rimaste"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
