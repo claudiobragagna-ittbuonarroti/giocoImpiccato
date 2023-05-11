@@ -33,7 +33,7 @@ public class Interfacciabella extends JFrame {
         GIOCAButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                FINESTRA2 F1=  new FINESTRA2();
+                FINESTRA1 F1=  new FINESTRA1();
             }
         });
         exitButton.addActionListener(new ActionListener() {

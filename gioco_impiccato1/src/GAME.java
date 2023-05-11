@@ -10,7 +10,7 @@ public class GAME {
     int lunghezza;
     int indovinaParola;
     private List<PAROLA> parole;
-    public GAME(String path) throws Exception {     //METTICE ER path di parole
+    /*public GAME(String path) throws Exception {     //METTICE ER path di parole
         FileReader fr = new FileReader(path);
         BufferedReader br = new BufferedReader(fr);
         for(String line : br.lines().collect(Collectors.toSet()))       //scorre tutte le linee del file
@@ -19,7 +19,7 @@ public class GAME {
 
             parole.add(new PAROLA(4 , line));
         }
-    }
+    }*/
 
     /*public char readElement(int index) {
         return indovinaParola[index];

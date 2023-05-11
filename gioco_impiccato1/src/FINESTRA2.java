@@ -11,14 +11,26 @@ public class FINESTRA2 extends JFrame {
     private JTextField textNickname;
     private JButton exitButton;
     private JButton inserisciButton;
+    public String nickName = "";
+
+
+   public String getNickName() {
+        return textNickname.getText();
+    }
+    UTENTE u1 = new UTENTE(getNickName());
+
 
 
     public FINESTRA2() {
+        FINESTRA1 F1 = new FINESTRA1();
+        PAROLA parola = new PAROLA();
         setContentPane(pnlPannello);
         setTitle("Main");
         setSize(900, 600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
+
+
 
 
 
@@ -55,12 +67,21 @@ public class FINESTRA2 extends JFrame {
             }
         });
         inserisciButton.addActionListener(new ActionListener() {
+            int i = 0;
             @Override
             public void actionPerformed(ActionEvent e) {
-                FINESTRA3 F3 = new FINESTRA3();
-                textNickname.setText("");
+
+                /*i++;
+
+                if(i<Integer.parseInt(F1.numeroInseritoText.getText())){
+                    textNickname.setText("");
+                }*/
+                nickName = textNickname.getText();
+                FINESTRA3 F3 = new FINESTRA3(nickName);
 
             }
         });
+
+
     }
 }
