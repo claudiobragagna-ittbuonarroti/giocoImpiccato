@@ -34,7 +34,9 @@ public class Interfacciabella extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 FINESTRA1 F1=  new FINESTRA1();
+                dispose();
             }
+
         });
         exitButton.addActionListener(new ActionListener() {
             @Override

@@ -1,12 +1,6 @@
-
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.util.concurrent.ForkJoinPool;
 
 
 public class FINESTRA3 extends JFrame {
@@ -22,8 +16,13 @@ public class FINESTRA3 extends JFrame {
     private JButton FINISCIGIOCOButton;
     private JLabel NICKNAMETEXT;
     private JLabel erroreTXT;
+    private JLabel avvertenzaTXT;
+    private JLabel punteggioTXT;
+    private JButton GENERAPAROLAButton;
     private String stringa = "";
     private String nickname;
+    private int  punteggio = 0;
+    private int corrette = 0;
 
     private String parola;
 
@@ -46,56 +45,98 @@ public class FINESTRA3 extends JFrame {
         setVisible(true);
         this.nickname = nickname;
 
+
         NICKNAMETEXT.setText("NICKNAME:  "+ nickname);
         showParola.setText(P1.parolaTry.toString());
         viteRimasteTXT.setText(String.valueOf((U1.getVite())));
+        erroriTXT.setText(String.valueOf((U1.getErrori())));
 
-        consiglioBUTTON.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                consiglioTEXT.setText("occhio dove guardi giovanotto ;)");
-            }
-        });
+
         inserisciLetteraBUTTON.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try{
+                    int o = 0;
+                    char variabileChar = inputTEXT.getText().charAt(0);
+                    for(int i=0; i< P1.getLunghezza();i++){
+                        if(variabileChar==P1.getChar(i)){
+                            P1.parolaTry.set(i,variabileChar);
+                            showParola.setText(P1.parolaTry.toString());
+                            o++;
+                        }
+                        inputTEXT.setText("");
+                    }
 
 
-                    P1.checkElement((inputTEXT.getText()));
-                    showParola.setText(P1.parolaTry.toString());
+                if(o==0){
+                    erroreTXT.setText("errore la lettera non è contenuta");
+                    U1.aumentoErrori();
                     viteRimasteTXT.setText(String.valueOf((U1.getVite())));
-                } catch (Exception z){
-                    erroreTXT.setText("devi inserire un carattere");
+                    erroriTXT.setText(String.valueOf((U1.getErrori())));
                 }
-
-
-
             }
         });
         inserisciParolaBUTTON.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                inputTEXT.getText();
-
                 try{
-                    inputTEXT.setText(P1.checkParola(inputTEXT.getText()));
-                    showParola.setText(P1.parolaTry.toString());
-                    viteRimasteTXT.setText(String.valueOf((U1.getVite())));
-                }catch (Exception o){
-                    System.out.println(o);
-                }
+                    if((P1.checkParola(inputTEXT.getText()))){
+                        showParola.setText(inputTEXT.getText());
+                        punteggio++;
+                        punteggioTXT.setText("PUNTEGGIO: " + punteggio);
+                        P1.parolaTry.clear();
+                    }
+                    else{
 
-                //viteRimasteTXT.setText(errori);
+                    }
+
+                }catch (Exception o){
+                    erroreTXT.setText("errore hai sbagliato");
+                    U1.aumentoErrori();
+                }
+                viteRimasteTXT.setText(String.valueOf((U1.getVite())));
+                erroriTXT.setText(String.valueOf((U1.getErrori())));
+                inputTEXT.setText("");
+
 
             }
         });
+
         FINISCIGIOCOButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                FINESTRA4 F4 = new FINESTRA4(nickname, U1.getPunteggio());
+                FINESTRA4 F4 = new FINESTRA4(nickname, punteggio);
+                dispose();
             }
         });
 
+        consiglioBUTTON.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                consiglioTEXT.setText(Character.toString(P1.carattere));
+                avvertenzaTXT.setText("hai utilizzato l'unico consiglio");
+                U1.diminuisciVite();
+                viteRimasteTXT.setText(String.valueOf((U1.getVite())));
+                for (int i = 0; i < P1.getLunghezza(); i++) {
+                    if (P1.carattere == P1.getChar(i)) {
+                        P1.parolaTry.set(i, P1.carattere);
+                        showParola.setText(P1.parolaTry.toString());
+                        corrette++;
+                        if (corrette == P1.getLunghezza()){
+                            punteggio++;
+                            punteggioTXT.setText("PUNTEGGIO: "+ punteggio);
+                        }
+                    }
+
+                }
+            }
+        });
+        GENERAPAROLAButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                P1.parolaTry.clear();
+                P1.generaParolaRandom();
+                showParola.setText(P1.parolaTry.toString());
+            }
+        });
     }
 }

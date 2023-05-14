@@ -181,7 +181,7 @@
           <text value="NICKNAME: "/>
         </properties>
       </component>
-      <component id="e480e" class="javax.swing.JLabel">
+      <component id="e480e" class="javax.swing.JLabel" binding="punteggioTXT">
         <constraints>
           <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -195,6 +195,22 @@
         </constraints>
         <properties>
           <text value=""/>
+        </properties>
+      </component>
+      <component id="6b20a" class="javax.swing.JLabel" binding="avvertenzaTXT">
+        <constraints>
+          <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="42f99" class="javax.swing.JButton" binding="GENERAPAROLAButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="GENERA PAROLA"/>
         </properties>
       </component>
     </children>

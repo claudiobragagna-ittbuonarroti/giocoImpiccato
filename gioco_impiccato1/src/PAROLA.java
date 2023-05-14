@@ -3,55 +3,69 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class PAROLA{
-    int lunghezza;
+    private int lunghezza;
+    private String[] PAROLE = {"daje", "milan", "gym", "aabba"};
+    public ArrayList<Character> parolaTry = new ArrayList<Character>();
+    private char[] parola;
+    public char carattere;
 
-    private String[] PAROLE = {"daje", "milan", "gym"};
-    ArrayList<Character> parolaTry = new ArrayList<Character>();
-    ArrayList<Character> parola = new ArrayList<Character>();
-
-    PAROLA() {
+    public PAROLA() {
         Random random = new Random();
-        String parola = PAROLE[random.nextInt(PAROLE.length)];
-        System.out.println(parola);
-        for(int i=0; i<parola.length(); i++){
+        parola = PAROLE[random.nextInt(PAROLE.length)].toCharArray();
+        for(int i=0; i<parola.length; i++){
             parolaTry.add('_');
         }
+        this.lunghezza = parola.length;
+        carattere = parola[random.nextInt(PAROLE.length)];
     }
 
-
-
-    public ArrayList<Character> checkElement(String car) throws Exception{
-        //controllo che la lettera sia nella parola
-        if(car.length()!=1){
-            throw new Exception();
+    public char[] generaParolaRandom(){
+        Random random = new Random();
+        parola = PAROLE[random.nextInt(PAROLE.length)].toCharArray();
+        for(int i=0; i<parola.length; i++){
+            parolaTry.add('_');
         }
-        char lettera = car.toCharArray()[0];
-        for(int i=0; i<lunghezza; i++){
-            if (lettera == parolaTry.get(i)){
-                //lettera trovata
-                parola.set(i, lettera);
-            }
-            else{
-
-            }
-        }
+        this.lunghezza = parola.length;
+        carattere = parola[random.nextInt(PAROLE.length)];
         return parola;
     }
 
-    public String checkParola(String provaParola) throws Exception {
-        String out = "";
-        //controllo che la parola sia corretta
+    public int getLunghezza() {
+        return lunghezza;
+    }
 
-        for (int i=0; i<parola.size(); i++){
-            if(provaParola.equals(new String(parola.toString()))){
-                i++;
-                out = "daje ao";
-
+    public ArrayList<Character> checkElement(String car) throws Exception{
+        //controllo che la lettera sia nella parola
+        char lettera = car.toCharArray()[0];
+        for(int i=0; i<parola.length-1; i++){
+            if (lettera == parolaTry.get(i)){
+                //lettera trovata
+                parolaTry.set(i, lettera);
             }
             else{
-                out= ("non ghe sem, la parola è sbagliata");
+
             }
         }
-        return new String(parola.toString());
+        return parolaTry;
+    }
+
+    public char getChar(int n){
+        return parola[n];
+    }
+
+
+    public boolean checkParola(String provaParola) throws Exception {
+        boolean out = false;
+        //controllo che la parola sia corretta
+
+        for (int i=0; i<parola.length; i++){
+            if(provaParola.toCharArray()[i] == (parola[i])){
+                out = true;
+            }
+            else{
+                out = false;
+            }
+        }
+        return out;
     }
 }

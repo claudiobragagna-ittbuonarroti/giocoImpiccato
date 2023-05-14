@@ -18,17 +18,15 @@ public class FINESTRA1 extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
 
-        numeroInseritoText.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-            }
-        });
         INSERISCIButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 numeroInseritoText.getText();
                 FINESTRA2 F2 = new FINESTRA2();
+                dispose();
+
             }
         });
 
