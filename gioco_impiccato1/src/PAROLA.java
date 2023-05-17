@@ -26,7 +26,7 @@ public class PAROLA{
             parolaTry.add('_');
         }
         this.lunghezza = parola.length;
-        carattere = parola[random.nextInt(PAROLE.length)];
+        carattere = parola[random.nextInt(PAROLE.length-1)];
         return parola;
     }
 

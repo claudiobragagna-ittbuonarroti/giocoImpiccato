@@ -136,6 +136,8 @@ public class FINESTRA3 extends JFrame {
                 P1.parolaTry.clear();
                 P1.generaParolaRandom();
                 showParola.setText(P1.parolaTry.toString());
+                avvertenzaTXT.setText("");
+                consiglioTEXT.setText("");
             }
         });
     }
